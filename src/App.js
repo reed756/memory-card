@@ -15,14 +15,19 @@ function App() {
   }
 
   useState(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon")
+    fetch("https://api.pokemontcg.io/v2/cards", {
+      headers: {
+        'X-API-KEY': 'ccbeb006-c385-4584-bc89-cb3e6ee3c0bc',
+    },
+  })
             .then(response => response.json())
             .then(data => {
                 setCardData({data})
             })
   }, []);
-  console.log(cardData)
-  console.log(random())
+
+  console.log(cardData.data.data[1].images.small)
+
   return (
 
     <div className="App">
@@ -32,12 +37,10 @@ function App() {
         bestScore={bestScore}
       />
       <div className="card-container">
-        <Card 
-          image={cardData.data.results[0].url}
+        <Card
+          image={cardData.data.data[1].images.small}
         />
-        <Card 
-          image={cardData.data.results[0].url}
-        />
+        <Card/>
       </div>
       <Footer />
     </div>
