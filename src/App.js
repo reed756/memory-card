@@ -11,25 +11,24 @@ function App() {
   const [cardData, setCardData] = useState();
 
   function random() {
-    return Math.floor(Math.random() * (57 + 1));
+    return Math.floor(Math.random() * (151 + 1));
   }
 
   useState(() => {
-    fetch("https://api.pokemontcg.io/v2/cards", {
+    fetch("https://api.pokemontcg.io/v2/cards?q=set.id=base2", {
       headers: {
         'X-API-KEY': 'ccbeb006-c385-4584-bc89-cb3e6ee3c0bc',
     },
   })
             .then(response => response.json())
             .then(data => {
-                setCardData({data})
+                setCardData(data)
             })
   }, []);
 
-  console.log(cardData.data.data[1].images.small)
+  console.log(cardData)
 
   return (
-
     <div className="App">
       <Header />
       <Scoreboard 
@@ -38,7 +37,7 @@ function App() {
       />
       <div className="card-container">
         <Card
-          image={cardData.data.data[1].images.small}
+          // image={cardData.data[12].images.small}
         />
         <Card/>
       </div>
