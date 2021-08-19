@@ -1,17 +1,14 @@
-import React, {useState} from "react"
+import React from "react"
 
-function Scoreboard() {
-    const [score, setScore] = useState(0);
-    const [bestScore, setBestScore] = useState(0);
-
+function Scoreboard(props) {
     return (
         <div className="scoreboard">
             <div>
-                Current Score: { score }
+                <p>Current Score: { props.score }</p>
             </div>
             <br/>
             <div>
-                Best Score: { bestScore }
+                <p>Best Score: { props.bestScore }</p>
             </div>
         </div>
     )

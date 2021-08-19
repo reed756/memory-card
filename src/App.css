@@ -51,6 +51,7 @@ footer {
 
 }
 .card-container {
+  margin-top: 80px;
   display: flex;
   height: 500px;
   width: 1000px;
