@@ -1,8 +1,8 @@
 import './App.css';
-import Footer from "./Footer"
-import Scoreboard from "./Scoreboard"
-import Card from "./Card"
-import Header from "./Header"
+import Footer from "./components/Footer"
+import Scoreboard from "./components/Scoreboard"
+import Card from "./components/Card"
+import Header from "./components/Header"
 import React, {useState} from 'react';
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
   }, []);
 
   function random() {
-    return Math.floor(Math.random() * (100 + 1));
+    return Math.floor(Math.random() * (99 + 1));
   }
 
   function handleClick(event) {
