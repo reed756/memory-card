@@ -6,27 +6,45 @@ import Header from "./Header"
 import React, {useState} from 'react';
 
 function App() {
+
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
   const [cardData, setCardData] = useState();
-
-  function random() {
-    return Math.floor(Math.random() * (151 + 1));
-  }
+  const [randomImgOne, setRandomImgOne] = useState('https://i.imgflip.com/1ur9b0.jpg');
+  const [randomImgTwo, setRandomImgTwo] = useState('https://i.imgflip.com/1g8my4.jpg');
+  const [idOne, setIdOne] = useState('2');
+  const [idTwo, setIdTwo] = useState('1');
+  const [cardArray, setCardArray] = useState([]);
 
   useState(() => {
-    fetch("https://api.pokemontcg.io/v2/cards?q=set.id=base2", {
-      headers: {
-        'X-API-KEY': 'ccbeb006-c385-4584-bc89-cb3e6ee3c0bc',
-    },
+    fetch("https://api.imgflip.com/get_memes", {
   })
             .then(response => response.json())
             .then(data => {
-                setCardData(data)
+                setCardData({data})
             })
   }, []);
 
-  console.log(cardData)
+  function random() {
+    return Math.floor(Math.random() * (100 + 1));
+  }
+
+  function handleClick(event) {
+    const randomOne = random();
+    const randomTwo = random();
+    setRandomImgOne(cardData.data.data.memes[randomOne].url)
+    setRandomImgTwo(cardData.data.data.memes[randomTwo].url)
+    setIdOne(randomOne)
+    setIdTwo(randomTwo)
+    setScore(score + 1)
+    if (!cardArray.includes(event.target.id) || cardArray === []) {
+      setCardArray(cardArray.concat(event.target.id))
+    } else {
+      setCardArray([]);
+      setBestScore(score);
+      setScore(0);
+    }
+  }
 
   return (
     <div className="App">
@@ -37,9 +55,15 @@ function App() {
       />
       <div className="card-container">
         <Card
-          // image={cardData.data[12].images.small}
+          image={ randomImgOne }
+          onClick={ handleClick }
+          id={ idOne }
         />
-        <Card/>
+        <Card
+          image={ randomImgTwo }
+          onClick={ handleClick }
+          id={ idTwo }
+        />
       </div>
       <Footer />
     </div>

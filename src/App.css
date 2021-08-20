@@ -53,10 +53,14 @@ footer {
   display: flex;
   height: 500px;
   width: 1000px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 .card {
-  width: 100%;
   text-align: center;
+}
+.card img {
+  height: 400px;
+  width: 400px;
+  cursor: pointer;
 }
