@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# Pokemon Memory Card
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> ## From The Odin Project's [curriculum](https://www.theodinproject.com/lessons/memory-card)
 
-## Available Scripts
+> - [Live Demo](https://reed756.github.io/memory-card/) :shipit:
 
-In the project directory, you can run:
+# React
 
-### `yarn start`
+A web application using create-react-app, React hooks, and imgflipAPI that lets the user play a memory game where the game resets if they select the same meme more than once. A scoreboard keeps check of their best score.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Lessons Learned
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Creating this application was very similar to a meme generator using class-based components I'd created in a tutorial earlier on when learning React. Therefore I took that idea and added a game as well as applied my knowledge of Hooks on top of it. The main takeaway I had was keeping a track of which memes had already been shown in that particular game run. 
 
-### `yarn test`
+Luckily all the api images came within an ID so I found that I could simply add them to an array to keep track and when the game reset I could simply reset this array as well.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In future I would introduce more components to keep my App.js component as simple as possible. 
 
-### `yarn build`
+## Potential Future Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Add more memes to appear at once to avoid the scenario where both the memes have already appeared meaning the player has no choice but to lose.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Deployment
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Deployed with [github pages](https://pages.github.com/).
 
-### `yarn eject`
+## Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Installing and running
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone https://github.com/reed756/memory-card
+cd react-memory-card
+npm install
+npm run start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Built With
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- [React](https://reactjs.org/)
+- [imgflipAPI](https://imgflip.com/api)
 
-## Learn More
+## License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License
